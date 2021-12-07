@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 const Score = () => {
     const [currentScore, setCurrentScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
+    const [clickedCard, setClickedCard] = useState([]);
+    //everytime card is clicked add its id or something to array
 
     const handleScore = (cardName) => {
         if (clickedCard.includes(cardName)) {
@@ -14,6 +16,10 @@ const Score = () => {
         }
     }
 
+    const resetScore = () => {
+        setClickedCard([]);
+        setCurrentScore(0);
+    }
     return (
         <div>
             <div>currentScore = {currentScore} highScore = {highScore}</div>
