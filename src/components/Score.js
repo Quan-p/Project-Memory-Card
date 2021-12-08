@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Container from './Card';
 
 const Score = () => {
     const [currentScore, setCurrentScore] = useState(0);
@@ -15,6 +16,10 @@ const Score = () => {
             setCurrentScore(score);
         }
     }
+    
+    const handleCard = (cardName) => {
+        setClickedCard((prevArr) => [...prevArr, cardName]);
+    }
 
     const resetScore = () => {
         setClickedCard([]);
@@ -22,8 +27,13 @@ const Score = () => {
     }
     return (
         <div>
-            <div>currentScore = {currentScore} highScore = {highScore}</div>
+            <div>Score = {currentScore} High Score = {highScore}</div>
+            <Container
+                handleScore={handleScore} 
+            />
         </div>
     )
 
 }
+
+export default Score;
