@@ -8,6 +8,7 @@ const App = () => {
   return (
     <div>
       <Score />
+      <Container />
     </div>
   )
 }
