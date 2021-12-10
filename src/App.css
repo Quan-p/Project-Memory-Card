@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+img {
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 15px;
+}

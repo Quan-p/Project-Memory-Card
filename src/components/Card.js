@@ -20,10 +20,10 @@ const Container = (props) => {
     }, [score, highScore]);
 // optimization, shuffle if score changes
     return (
-        <div>
-           {characters.map((card) => (
-               <img src={card.src} alt={card.title}/>
-           ))}
+        <div className={ 'wrapper' }>
+            {characters.map((card) => (
+                <img src={card.src} alt={card.title}/>
+            ))}
         </div>
     )
 }
