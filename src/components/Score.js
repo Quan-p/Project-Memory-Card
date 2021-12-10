@@ -28,9 +28,6 @@ const Score = () => {
     return (
         <div>
             <div>Score = {currentScore} High Score = {highScore}</div>
-            <Container
-                handleScore={handleScore} 
-            />
         </div>
     )
 

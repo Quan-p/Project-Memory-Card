@@ -1,4 +1,4 @@
-import Reach, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { characters } from './characters';
 
 const Container = (props) => {
@@ -13,16 +13,21 @@ const Container = (props) => {
 
     const [cards, setNewCards] = useState(characters)
 
-    useEffect(() => {
-        const newArr = [...cards];
-        shuffleCards(newArr);
-        setNewCards(newArr);
-    }, [score, highScore]);
+    // useEffect(() => {
+    //     const newArr = [...characters];
+    //     shuffleCards(newArr);
+    //     setNewCards(newArr);
+    // }, [score, highScore]);
 // optimization, shuffle if score changes
     return (
         <div className={ 'wrapper' }>
             {characters.map((card) => (
-                <img src={card.src} alt={card.title}/>
+                <div className={ 'img-container' }>
+                    <img src={card.src} alt={card.title}/>
+                    <div className={ 'title'}>
+                        {card.title}
+                    </div>
+                </div>
             ))}
         </div>
     )
