@@ -2,6 +2,8 @@ import Reach, { useState, useEffect } from 'react';
 import { characters } from './characters';
 
 const Container = (props) => {
+    const { score, highScore } = props;
+    
     const shuffleCards = (newArr) => {
         for (let i = newArr.length - 1; i > 0; i--) {
             let randomId = Math.floor(Math.random() * i);
@@ -9,6 +11,14 @@ const Container = (props) => {
         }
     }
 
+    const [cards, setNewCards] = useState(characters)
+
+    useEffect(() => {
+        const newArr = [...cards];
+        shuffleCards(newArr);
+        setNewCards(newArr);
+    }, [score, highScore]);
+// optimization, shuffle if score changes
     return (
         <div>
            {characters.map((card) => (
