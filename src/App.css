@@ -7,13 +7,25 @@
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
 
+
+.img-container {
+  margin: 15px;
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
   min-width: 100%;
-  height: 100%;
+  max-width: 75%;
   object-fit: cover;
-  padding: 15px;
+}
+
+.title {
+  font-size: 15px;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
