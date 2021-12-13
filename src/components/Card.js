@@ -18,6 +18,8 @@ const Container = (props) => {
         console.log(cardName);
     }
 
+
+
     useEffect(() => {
         const newArr = [...characters];
         shuffleCards(newArr);
@@ -29,9 +31,9 @@ const Container = (props) => {
             {characters.map((card) => (
                 <div className={ 'img-container' } onClick={handleCardClick}>
                     <img src={card.src} alt={card.title}/>
-                    <div className={ 'title'}>
+                    <p className={ 'title' }>
                         {card.title}
-                    </div>
+                    </p>
                 </div>
             ))}
         </div>
