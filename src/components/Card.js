@@ -13,16 +13,21 @@ const Container = (props) => {
 
     const [cards, setNewCards] = useState(characters)
 
-    // useEffect(() => {
-    //     const newArr = [...characters];
-    //     shuffleCards(newArr);
-    //     setNewCards(newArr);
-    // }, [score, highScore]);
+    const handleCardClick = (e) => {
+        const cardName = e.target.parentNode.lastChild.textContent;
+        console.log(cardName);
+    }
+
+    useEffect(() => {
+        const newArr = [...characters];
+        shuffleCards(newArr);
+        setNewCards(newArr);
+    }, [score, highScore]);
 // optimization, shuffle if score changes
     return (
         <div className={ 'wrapper' }>
             {characters.map((card) => (
-                <div className={ 'img-container' }>
+                <div className={ 'img-container' } onClick={handleCardClick}>
                     <img src={card.src} alt={card.title}/>
                     <div className={ 'title'}>
                         {card.title}
