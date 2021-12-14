@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { characters } from './characters';
 
 const Container = (props) => {    
-    const shuffleCards = (newArr) => {
-        for (let i = newArr.length - 1; i > 0; i--) {
-            let randomId = Math.floor(Math.random() * i);
-            [newArr[randomId], newArr[i]] = [newArr[i], newArr[randomId]];
-        }
-    }
+    // const shuffleCards = (newArr) => {
+    //     for (let i = newArr.length - 1; i > 0; i--) {
+    //         let randomId = Math.floor(Math.random() * i);
+    //         [newArr[randomId], newArr[i]] = [newArr[i], newArr[randomId]];
+    //     }
+    // }
 
     const [clickedCard, setClickedCard] = useState([]);
     const [currentScore, setCurrentScore] = useState(0);
@@ -19,6 +19,25 @@ const Container = (props) => {
         console.log(cardName);
     }
 
+    // fisher yates shuffle
+    function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+      
+        // While there remain elements to shuffle...
+        while (currentIndex !== 0) {
+      
+          // Pick a remaining element...
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+      
+        return array;
+      }
+
     const gameLogic = (cardName) => {
         if (clickedCard.includes(cardName)) {
            resetScore() 
@@ -27,6 +46,7 @@ const Container = (props) => {
             if (newScore > highScore) setHighScore(newScore);
             setCurrentScore(newScore)
             setClickedCard((prevState) => [...prevState, cardName])
+            shuffle(characters);
         }    
     }
     //everytime card is clicked add its id or something to array
