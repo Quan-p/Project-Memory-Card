@@ -10,8 +10,8 @@ const Container = (props) => {
     }
 
     const [clickedCard, setClickedCard] = useState([]);
-
-    const [cards, setNewCards] = useState(characters)
+    const [currentScore, setCurrentScore] = useState(0);
+    const [highScore, setHighScore] = useState(0);
 
     const handleCardClick = (e) => {
         const cardName = e.target.parentNode.lastChild.textContent;
@@ -20,23 +20,16 @@ const Container = (props) => {
     }
 
     const gameLogic = (cardName) => {
-
-    }
-
-    const [currentScore, setCurrentScore] = useState(0);
-    const [highScore, setHighScore] = useState(0);
-    //everytime card is clicked add its id or something to array
-
-    const handleScore = (cardName) => {
         if (clickedCard.includes(cardName)) {
-            resetScore();
+           resetScore() 
         } else {
-            const score = currentScore + 1;
-            if (score > highScore) setHighScore(score);
-            setCurrentScore(score);
-        }
+            const newScore = currentScore + 1;
+            if (newScore > highScore) setHighScore(newScore);
+            setCurrentScore(newScore)
+            setClickedCard((prevState) => [...prevState, cardName])
+        }    
     }
-    
+    //everytime card is clicked add its id or something to array
 
     const resetScore = () => {
         setClickedCard([]);
@@ -44,15 +37,18 @@ const Container = (props) => {
     }
 
     return (
-        <div className={ 'wrapper' }>
-            {characters.map((card) => (
-                <div className={ 'img-container' } onClick={handleCardClick}>
-                    <img src={card.src} alt={card.title}/>
-                    <p className={ 'title' }>
-                        {card.title}
-                    </p>
-                </div>
-            ))}
+        <div>
+            <div>Score = {currentScore} High Score = {highScore}</div>
+            <div className={ 'wrapper' }>
+                {characters.map((card) => (
+                    <div className={ 'img-container' } onClick={handleCardClick}>
+                        <img src={card.src} alt={card.title}/>
+                        <p className={ 'title' }>
+                            {card.title}
+                        </p>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
