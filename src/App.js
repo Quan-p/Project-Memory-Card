@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import './App.css';
-import Score from "./components/Score";
-import Container from "./components/Card";
+import Game from "./components/Game";
+import Header from "./components/Header";
 
 const App = () => {
 
   return (
-    <div>
-      {/* <Score /> */}
-      <Container />
-    </div>
+    <>
+      <Header />
+      <Game />
+    </>
   )
 }
 
