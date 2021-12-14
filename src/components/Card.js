@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { characters } from './characters';
 
-const Container = (props) => {    
-    // const shuffleCards = (newArr) => {
-    //     for (let i = newArr.length - 1; i > 0; i--) {
-    //         let randomId = Math.floor(Math.random() * i);
-    //         [newArr[randomId], newArr[i]] = [newArr[i], newArr[randomId]];
-    //     }
-    // }
-
+const Container = () => {    
     const [clickedCard, setClickedCard] = useState([]);
     const [currentScore, setCurrentScore] = useState(0);
     const [highScore, setHighScore] = useState(0);
@@ -16,7 +9,6 @@ const Container = (props) => {
     const handleCardClick = (e) => {
         const cardName = e.target.parentNode.lastChild.textContent;
         gameLogic(cardName);
-        console.log(cardName);
     }
 
     // fisher yates shuffle
@@ -46,7 +38,7 @@ const Container = (props) => {
             if (newScore > highScore) setHighScore(newScore);
             setCurrentScore(newScore)
             setClickedCard((prevState) => [...prevState, cardName])
-            shuffle(characters);
+            //shuffle(characters);
         }    
     }
     //everytime card is clicked add its id or something to array
@@ -55,6 +47,10 @@ const Container = (props) => {
         setClickedCard([]);
         setCurrentScore(0);
     }
+
+    useEffect(() => {
+        shuffle(characters);
+    });
 
     return (
         <div>
