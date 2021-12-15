@@ -41,7 +41,6 @@ const Game = () => {
             //shuffle(characters);
         }    
     }
-    //everytime card is clicked add its id or something to array
 
     const resetScore = () => {
         setClickedCard([]);
@@ -53,8 +52,8 @@ const Game = () => {
     });
 
     return (
-        <div>
-            <div>Score = {currentScore} High Score = {highScore}</div>
+        <div className={ 'main' }>
+            <div className={ 'score' }>Score = {currentScore} High Score = {highScore}</div>
             <div className={ 'wrapper' }>
                 {characters.map((card) => (
                     <div className={ 'img-container' } onClick={handleCardClick}>
