@@ -43,7 +43,7 @@ html, body {
 
 .img-container:hover {
   background-color: #929362;
-  box-shadow: 0 5px 15px rgba(223, 182, 47, 0.3);
+  box-shadow: 0 10px 20px rgba(223, 182, 47, 0.3);
 }
 
 img {
@@ -62,12 +62,26 @@ img {
   height: 100%;
 }
 
-.score {
-  margin: 15px;
+.score-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
   font-size: 35px;
   text-align: center;
   color: black;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: white;
+}
+
+.current-score, .high-score {
+  display: flex;
+  margin: 10px;
+  border-radius: 150px;
+  box-shadow: 0 10px 20px rgba(223, 182, 47, 0.3);
+  height: 50px;
+  width: 450px;
+  align-items: center;
+  justify-content: center;
+  color: #b4ba5c;
 }
 
