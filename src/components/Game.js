@@ -53,7 +53,14 @@ const Game = () => {
 
     return (
         <div className={ 'main' }>
-            <div className={ 'score' }>Score = {currentScore} High Score = {highScore}</div>
+            <div className={ 'score-wrapper' }>
+                <div className={ 'current-score' }>
+                    Score = {currentScore}
+                </div>
+                <div className={ 'high-score' }>
+                    High Score = {highScore}
+                </div>
+            </div>
             <div className={ 'wrapper' }>
                 {characters.map((card) => (
                     <div className={ 'img-container' } onClick={handleCardClick}>
