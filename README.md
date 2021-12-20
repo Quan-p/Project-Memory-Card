@@ -14,4 +14,4 @@ This memory card game project was part of the self-taught education of The Odin 
 - HTML
 - CSS
 
-![main](/images/main.png?raw=true)
+![main](/src/images/main.png?raw=true)
