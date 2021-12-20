@@ -38,7 +38,6 @@ const Game = () => {
             if (newScore > highScore) setHighScore(newScore);
             setCurrentScore(newScore)
             setClickedCard((prevState) => [...prevState, cardName])
-            //shuffle(characters);
         }    
     }
 
