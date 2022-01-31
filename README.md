@@ -2,7 +2,7 @@
 
 This project was a memory card game created using React.
 
-## About the Proejct
+## About the Project
 
 This memory card game project was part of the self-taught education of The Odin Project JS Curriculum.  The purpose of this was to practice utilizing hooks, lifestyle methods, and state.  
 
